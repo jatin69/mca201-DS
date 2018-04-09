@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+
+#define SIZE 10
+
+using namespace std;
+
+class queue 
+	/*   			
+	objective: Create a class to implement Queue(circular) using dynamically created array 
+	input parameters: none
+	output value: none
+	description:  Class definition
+	approach: Class definition provides data member and member functions for the Queue class
+	*/
+
+{
+	int *arr;			// array to store queue elements
+	int capacity;			// maximum capacity of the Q
+	int front;			// front points to front element in the Q
+	int rear;			// rear points to last element in the Q
+	int count;			// current size of the Q
+
+public:
+	queue(int size = SIZE);			// constructor
+	~queue();	
+	void dequeue();
+	void enqueue(int);
+	int peek();  				// returns front element
+	int size();				// returns current size of Q
+	bool isEmpty();
+	bool isFull();
+};

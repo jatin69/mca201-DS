@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+#define MAXSIZE 100  // or const int MAXSIZE=100;
+
+using namespace std;
+
+
+class stack
+	/*
+	objective: Create a class for implementing Stack using array
+	input parameters: none
+	output value: none
+	description:  class definition
+	approach: Class defines data member and member function of the stack class
+	*/
+{
+	int *arr;					// for dynamic array 
+	int top;
+	int capacity;					// checks size defined by user
+public:
+	stack(int size = MAXSIZE);			// constructor to create array dynamically
+	~stack();					// destructor to delete dynamically created array
+	void push(int &);
+	int pop();
+	int peek();
+	int size();					// Current size of stack
+	bool isEmpty();
+	bool isFull();
+};
