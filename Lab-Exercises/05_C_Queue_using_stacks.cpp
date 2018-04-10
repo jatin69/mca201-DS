@@ -14,8 +14,9 @@ using namespace std;
 #include <queue>
 #include <stack>
 
-template <class T> class myqueue {
-public:
+template <class T>
+class myqueue {
+ public:
   stack<T> s1;
   stack<T> s2;
   void push(T);
@@ -26,9 +27,13 @@ public:
   int size();
 };
 
-template <class T> void myqueue<T>::push(T ele) { s1.push(ele); }
+template <class T>
+void myqueue<T>::push(T ele) {
+  s1.push(ele);
+}
 
-template <class T> void myqueue<T>::pop() {
+template <class T>
+void myqueue<T>::pop() {
   while (s1.size() != 1) {
     s2.push(s1.top());
     s1.pop();
@@ -40,12 +45,17 @@ template <class T> void myqueue<T>::pop() {
   }
 }
 
-template <class T> bool myqueue<T>::empty() {
+template <class T>
+bool myqueue<T>::empty() {
   return (s1.empty() && s2.empty());
 }
-template <class T> int myqueue<T>::size() { return s1.size(); }
+template <class T>
+int myqueue<T>::size() {
+  return s1.size();
+}
 
-template <class T> T myqueue<T>::front() {
+template <class T>
+T myqueue<T>::front() {
   while (!s1.empty()) {
     s2.push(s1.top());
     s1.pop();
@@ -57,10 +67,12 @@ template <class T> T myqueue<T>::front() {
   }
   return frontElement;
 }
-template <class T> T myqueue<T>::back() { return s1.top(); }
+template <class T>
+T myqueue<T>::back() {
+  return s1.top();
+}
 
 int main() {
-
   myqueue<int> q;
 
   cout << "\t**** Queue using Stacks **** \n";

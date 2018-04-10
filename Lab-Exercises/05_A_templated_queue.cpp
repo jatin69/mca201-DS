@@ -14,8 +14,9 @@ using namespace std;
 
 #define SIZE 20
 
-template <class T> class Queue {
-public:
+template <class T>
+class Queue {
+ public:
   Queue(int size = SIZE);
   ~Queue();
 
@@ -29,7 +30,7 @@ public:
   bool isFull();
   bool isEmpty();
 
-private:
+ private:
   T *arr;
   int front;
   int rear;
@@ -37,7 +38,8 @@ private:
   int capacity;
 };
 
-template <class T> Queue<T>::Queue(int size) {
+template <class T>
+Queue<T>::Queue(int size) {
   capacity = size;
   count = 0;
   front = -1;
@@ -45,9 +47,13 @@ template <class T> Queue<T>::Queue(int size) {
   arr = new T[capacity];
 }
 
-template <class T> Queue<T>::~Queue() { delete[] arr; }
+template <class T>
+Queue<T>::~Queue() {
+  delete[] arr;
+}
 
-template <class T> void Queue<T>::enqueue(T ele) {
+template <class T>
+void Queue<T>::enqueue(T ele) {
   if (isFull()) {
     throw "Stack Overflow";
   }
@@ -62,8 +68,8 @@ template <class T> void Queue<T>::enqueue(T ele) {
   ++count;
 }
 
-template <class T> void Queue<T>::dequeue() {
-
+template <class T>
+void Queue<T>::dequeue() {
   if (isEmpty()) {
     throw "Queue Underflow";
   }
@@ -77,7 +83,8 @@ template <class T> void Queue<T>::dequeue() {
   --count;
 }
 
-template <class T> void Queue<T>::display() {
+template <class T>
+void Queue<T>::display() {
   if (isEmpty()) {
     throw "Queue is empty !! ";
   }
@@ -86,18 +93,26 @@ template <class T> void Queue<T>::display() {
   }
 }
 
-template <class T> T Queue<T>::peek() {
+template <class T>
+T Queue<T>::peek() {
   if (isEmpty()) {
     throw "Queue is empty !! ";
   }
   return arr[front];
 }
 
-template <class T> int Queue<T>::size() { return count; }
+template <class T>
+int Queue<T>::size() {
+  return count;
+}
 
-template <class T> bool Queue<T>::isFull() { return (rear == capacity - 1); }
+template <class T>
+bool Queue<T>::isFull() {
+  return (rear == capacity - 1);
+}
 
-template <class T> bool Queue<T>::isEmpty() {
+template <class T>
+bool Queue<T>::isEmpty() {
   return (front == -1 && rear == -1);
 }
 
@@ -126,56 +141,56 @@ int main() {
     cout << "\n";
 
     switch (choice) {
-    case '1': {
-      try {
-        int ele;
-        cout << "\nEnter element to be pushed: ";
-        cin >> ele;
-        myIntegerQueue.enqueue(ele);
-        cout << "\nPush successful.";
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '2': {
-      try {
-        cout << "\nElement Popped from the Queue is : "
-             << myIntegerQueue.peek();
-        myIntegerQueue.dequeue();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '3': {
-      try {
-        cout << "\nElement at top is : " << myIntegerQueue.peek() << "\n";
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '4': {
-      try {
-        myIntegerQueue.display();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '5': {
-      try {
-        cout << "Size of Queue is " << myIntegerQueue.size();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '6': {
-      try {
-        cout << "User Requested Exit ! Terminating ...";
-        exit(0);
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    default: { cerr << "Please choose a valid option "; }
+      case '1': {
+        try {
+          int ele;
+          cout << "\nEnter element to be pushed: ";
+          cin >> ele;
+          myIntegerQueue.enqueue(ele);
+          cout << "\nPush successful.";
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '2': {
+        try {
+          cout << "\nElement Popped from the Queue is : "
+               << myIntegerQueue.peek();
+          myIntegerQueue.dequeue();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '3': {
+        try {
+          cout << "\nElement at top is : " << myIntegerQueue.peek() << "\n";
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '4': {
+        try {
+          myIntegerQueue.display();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '5': {
+        try {
+          cout << "Size of Queue is " << myIntegerQueue.size();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '6': {
+        try {
+          cout << "User Requested Exit ! Terminating ...";
+          exit(0);
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      default: { cerr << "Please choose a valid option "; }
     }
   } while (1);
 

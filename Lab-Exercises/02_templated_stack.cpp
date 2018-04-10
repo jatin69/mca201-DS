@@ -15,7 +15,8 @@ using namespace std;
 
 #define MAXSIZE 100
 
-template <class T> class stack {
+template <class T>
+class stack {
   /*
   objective: Implementing Stack using array
   input parameters: none
@@ -24,23 +25,24 @@ template <class T> class stack {
   approach: Class defines data member and member function of the stack class
   */
 
-private:
-  T *arr;       // for dynamic array
-  int top;      // to keep track of top of stack
-  int capacity; // checks size defined by user
-public:
-  stack(int size = MAXSIZE); // parametrized constructor to initialise stack
-  ~stack();                  // destructor to delete allocated memory for stack
-  void push(T &);            // push element onto stack
-  T pop();                   // pop element from stack
-  T peek();                  // look at element at top of stack
-  int size();                // return size of filled stack
-  bool isEmpty();            // check if stack is empty
-  bool isFull();             // check if stack is full
-  void display();            // display stack contents
+ private:
+  T *arr;        // for dynamic array
+  int top;       // to keep track of top of stack
+  int capacity;  // checks size defined by user
+ public:
+  stack(int size = MAXSIZE);  // parametrized constructor to initialise stack
+  ~stack();                   // destructor to delete allocated memory for stack
+  void push(T &);             // push element onto stack
+  T pop();                    // pop element from stack
+  T peek();                   // look at element at top of stack
+  int size();                 // return size of filled stack
+  bool isEmpty();             // check if stack is empty
+  bool isFull();              // check if stack is full
+  void display();             // display stack contents
 };
 
-template <class T> stack<T>::stack(int size) {
+template <class T>
+stack<T>::stack(int size) {
   /*
   objective: Initialise data members and allocate memory for stack
   input parameters:
@@ -52,7 +54,8 @@ template <class T> stack<T>::stack(int size) {
   arr = new T[size];
 }
 
-template <class T> stack<T>::~stack() {
+template <class T>
+stack<T>::~stack() {
   /*
   objective: To deallocate memory used by stack
   input parameters: none
@@ -61,7 +64,8 @@ template <class T> stack<T>::~stack() {
   delete[] arr;
 }
 
-template <class T> bool stack<T>::isEmpty() {
+template <class T>
+bool stack<T>::isEmpty() {
   /*
   objective: to check whether stack is empty or not
   input parameters: none
@@ -71,7 +75,8 @@ template <class T> bool stack<T>::isEmpty() {
   return (top == -1);
 }
 
-template <class T> bool stack<T>::isFull() {
+template <class T>
+bool stack<T>::isFull() {
   /*
   objective: to check whether stack is full or not
   input parameters: none
@@ -81,7 +86,8 @@ template <class T> bool stack<T>::isFull() {
   return (top == capacity - 1);
 }
 
-template <class T> void stack<T>::push(T &ele) {
+template <class T>
+void stack<T>::push(T &ele) {
   /*
   objective: to push an element onto the stack
   input parameters:
@@ -97,7 +103,8 @@ template <class T> void stack<T>::push(T &ele) {
   arr[top] = ele;
 }
 
-template <class T> T stack<T>::pop() {
+template <class T>
+T stack<T>::pop() {
   /*
   objective: to pop an element from the stack
   input parameters: none
@@ -111,7 +118,8 @@ template <class T> T stack<T>::pop() {
   return arr[top--];
 }
 
-template <class T> T stack<T>::peek() {
+template <class T>
+T stack<T>::peek() {
   /*
   objective: To peek into stack
   input parameters: none
@@ -123,7 +131,8 @@ template <class T> T stack<T>::peek() {
   return arr[top];
 }
 
-template <class T> int stack<T>::size() {
+template <class T>
+int stack<T>::size() {
   /*
   objective: to check whether stack is empty or not
   input parameters: none
@@ -133,7 +142,8 @@ template <class T> int stack<T>::size() {
   return (top + 1);
 }
 
-template <class T> void stack<T>::display() {
+template <class T>
+void stack<T>::display() {
   /*
   objective: to show the current status of the stack
   input parameters: none
@@ -173,54 +183,55 @@ int main() {
     cout << "\n";
 
     switch (choice) {
-    case '1': {
-      try {
-        int ele;
-        cout << "\nEnter element to be pushed onto stack : ";
-        cin >> ele;
-        myIntegerStack.push(ele);
-        cout << "\nPush successful.";
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '2': {
-      try {
-        cout << "\nElement Popped from the stack is : " << myIntegerStack.pop();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '3': {
-      try {
-        cout << "\nElement at top is : " << myIntegerStack.peek() << "\n";
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '4': {
-      try {
-        myIntegerStack.display();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '5': {
-      try {
-        cout << "Size of stack is " << myIntegerStack.size();
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    case '6': {
-      try {
-        cout << "User Requested Exit ! Terminating ...";
-        exit(0);
-      } catch (const char *err) {
-        cerr << "Error : " << err;
-      }
-    } break;
-    default: { cerr << "Please choose a valid option "; }
+      case '1': {
+        try {
+          int ele;
+          cout << "\nEnter element to be pushed onto stack : ";
+          cin >> ele;
+          myIntegerStack.push(ele);
+          cout << "\nPush successful.";
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '2': {
+        try {
+          cout << "\nElement Popped from the stack is : "
+               << myIntegerStack.pop();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '3': {
+        try {
+          cout << "\nElement at top is : " << myIntegerStack.peek() << "\n";
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '4': {
+        try {
+          myIntegerStack.display();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '5': {
+        try {
+          cout << "Size of stack is " << myIntegerStack.size();
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      case '6': {
+        try {
+          cout << "User Requested Exit ! Terminating ...";
+          exit(0);
+        } catch (const char *err) {
+          cerr << "Error : " << err;
+        }
+      } break;
+      default: { cerr << "Please choose a valid option "; }
     }
   } while (1);
 

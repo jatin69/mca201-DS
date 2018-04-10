@@ -44,24 +44,23 @@ int precedence(char op) {
   */
 
   switch (op) {
+    case '+':
+    case '-':
+      return 1;
 
-  case '+':
-  case '-':
-    return 1;
+    case '*':
+    case '/':
+      return 2;
 
-  case '*':
-  case '/':
-    return 2;
+    case '^':
+      return 3;
 
-  case '^':
-    return 3;
+    case '(':
+    case ')':
+      return 0;
 
-  case '(':
-  case ')':
-    return 0;
-
-  default:
-    return -1;
+    default:
+      return -1;
   }
 }
 
@@ -77,11 +76,10 @@ string infix_to_postfix(string infix) {
 
   */
 
-  stack<char> operator_stack; // make a stack to hold operators
-  string postfix;             // string to hold resultant postfix expression
+  stack<char> operator_stack;  // make a stack to hold operators
+  string postfix;              // string to hold resultant postfix expression
 
   for (int i = 0; i < infix.length(); ++i) {
-
     // if operand push directly to resultant postfix
     if (is_operand(infix[i])) {
       postfix.push_back(infix[i]);
@@ -107,7 +105,6 @@ string infix_to_postfix(string infix) {
 
     // if it's an operator
     else if (is_operator(infix[i])) {
-
       // if it's the first one, just push to stack
       if (operator_stack.empty()) {
         operator_stack.push(infix[i]);

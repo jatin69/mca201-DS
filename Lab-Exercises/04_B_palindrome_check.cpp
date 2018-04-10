@@ -41,24 +41,20 @@ bool isStringPalindrome(string str) {
   }
 }
 
-
-bool isIntPalindrome(int num){
-	return isStringPalindrome(to_string(num));
-}
+bool isIntPalindrome(int num) { return isStringPalindrome(to_string(num)); }
 
 int main() {
-	
   string str = "malyaylam";
   if (isStringPalindrome(str)) {
     cout << str << " is a Palindrome";
   } else {
     cout << str << " is not a Palindrome";
   }
-  
-  cout<<"\n";
+
+  cout << "\n";
   int num = 10201;
-  if(isIntPalindrome(num)){
-  	cout << num << " is a Palindrome";
+  if (isIntPalindrome(num)) {
+    cout << num << " is a Palindrome";
   } else {
     cout << num << " is not a Palindrome";
   }

@@ -14,7 +14,6 @@
 using namespace std;
 
 int main() {
-
   string str = "Jatin Rohilla";
   stack<char> s;
 
