@@ -16,4 +16,7 @@ mca201- Data Structures
     + Stack/Queue using LL
 
 - Binary Search Trees
+    + Insert
+    + Delete 
     + Traversals
+    + Display

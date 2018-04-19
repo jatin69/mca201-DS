@@ -21,9 +21,9 @@
 
 - [X] Lab 08: WAP to implement Binary Search Tree ( perform insert, delete, display, InOrder, PreOrder and PostOrder traversal on BST
 
-- [ ] Lab 09_A: WAP to write and read values using variables in/from file.
-- [ ] Lab 09_B: WAP to write and read object using read and write function.
-- [ ] Lab 09_C: WAP to demonstrate example of tellg() , tellp() , seekp() and seekg() function.
+- [X] Lab 09_A: WAP to write and read values using variables in/from file.
+- [X] Lab 09_B: WAP to write and read object using read and write function.
+- [X] Lab 09_C: WAP to demonstrate example of tellg() , tellp() , seekp() and seekg() function.
 
 
 ### pending
