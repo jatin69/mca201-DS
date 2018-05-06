@@ -7,6 +7,12 @@
  * flags    : -std=c++11
  *
  * AIM : Implement Queue using Stacks
+ * The below implemented is a naive approach.
+ * Note that a better approach exists where we can perform `m` dequeques in O(m) time
+ * No backward moving exists. Just fetch elements when outqueue is empty. 
+ * the item enters inStack_ (costing 1 push), then later moves to outStack_ (costing 1 pop and 1 push), 
+ * then later comes off outStack_ to get returned (costing 1 pop). Effectively O(1) for each element. 
+ * Thus for `m` element, O(m)
  */
 
 #include <iostream>

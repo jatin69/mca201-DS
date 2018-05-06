@@ -24,8 +24,3 @@
 - [X] Lab 09_A: WAP to write and read values using variables in/from file.
 - [X] Lab 09_B: WAP to write and read object using read and write function.
 - [X] Lab 09_C: WAP to demonstrate example of tellg() , tellp() , seekp() and seekg() function.
-
-
-### pending
-- documentation pending (4A, 4B, 5A, 5B, 5C 6, 7)
-

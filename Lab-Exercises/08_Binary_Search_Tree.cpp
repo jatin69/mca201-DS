@@ -351,7 +351,7 @@ int main() {
 
   // delete a few nodes
   int key = 20;
-  cout << "\nDeleting Node " << ele;
+  cout << "\nDeleting Node " << key;
   tree.deleteNode(key);
 
   // Tree traversals
