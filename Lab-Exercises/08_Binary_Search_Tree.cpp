@@ -244,8 +244,8 @@ void BST::prettyTree(Node* root, int space) const {
   cout << "\n";
   for (int i = 1; i < space; ++i) {
     cout << " ";
-  }
-  cout << root->data << "\n";
+  } cout << root->data ;
+  cout << "\n";
   prettyTree(root->left, space + 10);
 }
 

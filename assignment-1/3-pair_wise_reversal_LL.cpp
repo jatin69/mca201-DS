@@ -40,7 +40,7 @@ Node *pair_wise_reversal(Node *head) {
             for others, simple pointer manipulation
   */
 
-  if (head->next == NULL) {
+  if (head==NULL || head->next == NULL) {
     return head;
   }
 
